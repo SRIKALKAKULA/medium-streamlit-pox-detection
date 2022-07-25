@@ -8,13 +8,13 @@ def app():
     result_all = st.container()
     model=commons.load_model()
     with header:
-        st.subheader("Test whether an area is affected by any natural disaster")
-        image_file = st.file_uploader("Upload Images", type=["png","jpg","jpeg"])
+        st.subheader("Test whether an area is affected by pox")
+        image_file = st.file_uploader("Upload Images", type=["png","jpg","jpeg","jfif"])
         if image_file is not None:
             # To See details
             file_details = {"filename":image_file.name, "filetype":image_file.type,
                           "filesize":image_file.size}
-            st.write(file_details)
+            # st.write(file_details)
 
             # To View Uploaded Image
             st.image(commons.load_image(image_file)
@@ -31,6 +31,7 @@ def app():
 
     with result_all:                        
         i=1
+        st.subheader("Pox types arranged in order of probability (highest first):")
         for pred in predictions:
-            st.subheader(str(i)+". "+pred)    
+            st.text(str(i)+". "+pred)    
             i+=1
