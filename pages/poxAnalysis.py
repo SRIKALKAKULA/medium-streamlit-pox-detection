@@ -31,7 +31,15 @@ def app():
 
     with result_all:                        
         i=1
-        st.subheader("Pox types arranged in order of probability (highest first):")
-        for pred in predictions:
-            st.text(str(i)+". "+pred)    
-            i+=1
+        if predictions[0]!="Monkeypox":
+            st.text("Not a case of Monkey Pox")
+            st.subheader("Pox types arranged in order of probability (highest first):")
+
+            print(predictions)
+            for pred in predictions:
+                st.text(str(i)+". "+pred)    
+                i+=1            
+        else:
+            st.text("It is a case of Monkey Pox")
+
+        
