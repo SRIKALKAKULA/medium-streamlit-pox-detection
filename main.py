@@ -6,7 +6,7 @@ from PIL import  Image
 # Custom imports 
 from multipage import MultiPage
 
-from pages import poxAnalysis
+from pages import poxAnalysis, yoloPoxAnalysis
 # Create an instance of the app 
 app = MultiPage()
 
@@ -25,6 +25,9 @@ st.text("Pox Affected Or Not: To detect chances of MonkeyPox, Measles and Chicke
 # Add all your application here
 app.add_page("Pox Analysis", poxAnalysis.app)
 # app.add_page("Detect Disaster Type", detectDisaster.app)
+
+app.add_page("YOLO Monkeypox Detection", yoloPoxAnalysis.app)  # New page
+
 
 
 # The main app
