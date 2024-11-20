@@ -4,3 +4,4 @@ plotly
 numpy
 torch 
 torchvision
+Pillow
